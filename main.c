@@ -3,7 +3,7 @@
 #include<string.h>
 
 typedef struct linkedList {
-    void *dados;
+    int dados;
     struct linkedList *next;
 } linkedList_t;
 
