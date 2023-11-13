@@ -16,6 +16,18 @@ void print_list(linkedList_t * head) {
     }
 }
 
+void push(linkedList_t *head, int val) {
+    linkedList_t *current = head;
+    while (current->next != NULL) {
+        current = current->next;
+    }
+
+    /* now we can add a new variable */
+    current->next = (linkedList_t *) malloc(sizeof(linkedList_t));
+    current->next->dados = val;
+    current->next->next = NULL;
+}
+
 
 int main() {
     linkedList_t *head = NULL;
@@ -27,9 +39,11 @@ int main() {
     head->next = (linkedList_t *) malloc(sizeof(linkedList_t));
     head->next->dados = 2;
     head->next->next = NULL;
+    push(head, 3);
 
     printf("Hello World!\n");
-    pri
+    print_list(head);
+    free(head->next->next);
     free(head->next);
     free(head);
     return 0;
