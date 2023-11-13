@@ -8,10 +8,15 @@ typedef struct linkedList {
 } linkedList_t;
 
 int main() {
-
-
+    linkedList_t *head = NULL;
+    head = (linkedList_t *)malloc(sizeof(linkedList_t));
+    if (head == NULL) {
+        return 1;
+    }
+    head->dados = 1;
+    head->next = NULL;
 
     printf("Hello World!\n");
-
+    free(head);
     return 0;
 }
