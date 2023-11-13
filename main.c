@@ -28,6 +28,16 @@ void push(linkedList_t *head, int val) {
     current->next->next = NULL;
 }
 
+void list_free(linkedList_t *head) {
+    linkedList_t *current = head;
+    linkedList_t *anterior = head;
+    while (current->next != NULL) {
+        anterior = current;
+        current = current->next;
+        free(anterior);
+    }
+    free(current);
+}
 
 int main() {
     linkedList_t *head = NULL;
@@ -40,11 +50,13 @@ int main() {
     head->next->dados = 2;
     head->next->next = NULL;
     push(head, 3);
+    push(head, 12);
 
     printf("Hello World!\n");
     print_list(head);
-    free(head->next->next);
-    free(head->next);
-    free(head);
+    list_free(head);
+    // free(head->next->next);
+    // free(head->next);
+    // free(head);
     return 0;
 }
