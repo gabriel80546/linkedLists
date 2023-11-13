@@ -7,6 +7,16 @@ typedef struct linkedList {
     struct linkedList *next;
 } linkedList_t;
 
+void print_list(linkedList_t * head) {
+    linkedList_t *current = head;
+
+    while (current != NULL) {
+        printf("current->dados = %d\n", current->dados);
+        current = current->next;
+    }
+}
+
+
 int main() {
     linkedList_t *head = NULL;
     head = (linkedList_t *)malloc(sizeof(linkedList_t));
@@ -19,6 +29,7 @@ int main() {
     head->next->next = NULL;
 
     printf("Hello World!\n");
+    pri
     free(head->next);
     free(head);
     return 0;
