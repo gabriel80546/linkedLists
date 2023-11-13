@@ -14,9 +14,12 @@ int main() {
         return 1;
     }
     head->dados = 1;
-    head->next = NULL;
+    head->next = (linkedList_t *) malloc(sizeof(linkedList_t));
+    head->next->dados = 2;
+    head->next->next = NULL;
 
     printf("Hello World!\n");
+    free(head->next);
     free(head);
     return 0;
 }
