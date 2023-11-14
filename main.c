@@ -51,6 +51,9 @@ int main() {
     head->next->next = NULL;
     push(head, 3);
     push(head, 12);
+    push(head, 10);
+    push(head, 100);
+
 
     printf("Hello World!\n");
     print_list(head);
